@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">오프섯다</string>
+    <string name="shared_preferences">com.leesc.tazza.sharedpreferences</string>
+    <!-- Splash -->
+    <string name="splash_msg_title">알림</string>
+    <string name="splash_msg_denied">이 서비스를 사용하기 위해서 권한이 필요합니다.</string>
+    <string name="splash_msg_goto_setting">설정하러 가기</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 방 만들기 -->
+    <string name="msg_room_exist">이미 방이 존재합니다.</string>
+    <string name="msg_room_not_selected">입장할 방을 선택해주세요.</string>
+
+    <string name="msg_wifi_not_enabled">와이파이에 연결 후 게임 이용 가능 합니다.</string>
+    <string name="msg_not_same_wifi">동일한 와이파이에 접속 후\n시도해 주세요.</string>
+
+</resources>

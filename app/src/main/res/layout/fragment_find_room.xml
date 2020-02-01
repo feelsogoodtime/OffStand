@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fundroid.offstand.ui.lobby.findroom.FindRoomViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_title_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_title_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_title_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_refresh_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_enter_room_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.312" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_enter_room_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.688" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_enter_room_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_enter_room_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_list_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.41" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_list_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_h_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.925" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_h_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1453125" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.986" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.014" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparant70"
+            app:layout_constraintBottom_toBottomOf="@id/guide_h_end"
+            app:layout_constraintLeft_toLeftOf="@id/guide_v_start"
+            app:layout_constraintRight_toRightOf="@id/guide_v_end"
+            app:layout_constraintTop_toTopOf="@id/guide_h_start" />
+
+        <ImageView
+            android:id="@+id/title_find_room"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/title_host_list"
+            app:layout_constraintBottom_toBottomOf="@id/guide_title_bottom"
+            app:layout_constraintDimensionRatio="H,3984:450"
+            app:layout_constraintEnd_toEndOf="@id/guide_enter_room_end"
+            app:layout_constraintStart_toStartOf="@id/guide_title_start"
+            app:layout_constraintTop_toTopOf="@id/guide_title_top" />
+
+        <ImageView
+            android:id="@+id/btn_refresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{() -> viewModel.onRefreshClick()}"
+            android:padding="@dimen/padding_refresh"
+            android:src="@drawable/btn_refresh"
+            app:layout_constraintBottom_toBottomOf="@id/guide_title_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guide_refresh_end"
+            app:layout_constraintStart_toEndOf="@id/title_find_room"
+            app:layout_constraintTop_toTopOf="@id/guide_title_top" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/loading"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitCenter"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_room"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:padding="@dimen/padding_list_room"
+            app:layout_constraintBottom_toBottomOf="@id/guide_list_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guide_refresh_end"
+            app:layout_constraintStart_toStartOf="@id/guide_title_start"
+            app:layout_constraintTop_toTopOf="@id/guide_list_top"
+            app:setRoomAdapter="@{viewModel.rooms}"
+            tools:listitem="@layout/item_room" />
+
+        <ImageView
+            android:id="@+id/btn_enter_room"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{() -> viewModel.onEnterRoomClick()}"
+            android:src="@drawable/btn_enter_room"
+            app:enable="@{viewModel.enterRoomEnable}"
+            app:layout_constraintBottom_toBottomOf="@id/guide_enter_room_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guide_enter_room_end"
+            app:layout_constraintStart_toStartOf="@id/guide_enter_room_start"
+            app:layout_constraintTop_toBottomOf="@id/guide_enter_room_top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
